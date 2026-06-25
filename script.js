@@ -66,28 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Animate Progress Bars on Scroll
-    const observerOptions = {
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBars = entry.target.querySelectorAll('.progress-bar');
-                progressBars.forEach(bar => {
-                    const width = bar.getAttribute('data-width');
-                    bar.style.width = width;
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const techStackSection = document.getElementById('tech-stack');
-    if (techStackSection) {
-        observer.observe(techStackSection);
-    }
 
     // Scroll Animations (Fade In Up)
     const animateObserverOptions = {
